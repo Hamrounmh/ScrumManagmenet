@@ -52,13 +52,13 @@
             this.nouriture = nouriture;
         }
 
-        public int manger(int quantite) throws NourritureNotFundExcepton {
+        public void manger(int quantite) throws NourritureNotFundExcepton {
             if(nouriture!=null){
                 this.poids = quantite * this.nouriture.coeff * this.poids;
                 this.vitesse+= this.vitesse * (1/this.poids);
             }else{
                 throw new NourritureNotFundExcepton();
             }
-return 0;
+
         }
     }
