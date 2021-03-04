@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 
 public class testAnimal
 {
@@ -16,6 +18,7 @@ public class testAnimal
    protected Animal animal1;
    protected Nouriture nouriture;
 
+   protected int quantite ;
     /**
      * Constructeur de la classe-test testAnimal
      */
@@ -33,12 +36,16 @@ public class testAnimal
     public void setUp() // throws java.lang.Exception
     {
         // ;Initialisez ici vos engagements
-         
+
+         quantite = 10;
+
          nouriture=new Nouriture();
          nouriture.setNom("viande");
          nouriture.setCoeff(10);
+
+
          animal1= new Animal(75,5);
-         animal1.setNouriture(nouriture);
+         animal1.AddNouriture(nouriture);
 
 
         
@@ -56,14 +63,29 @@ public class testAnimal
     }
 
     @Test
+    public void testMangerList() throws NourritureNotFundExcepton {
+        Nouriture nouriture2=new Nouriture("eau",10);
+        Nouriture nouriture3=new Nouriture();
+        ArrayList<Nouriture> listNouriture = new ArrayList<Nouriture>();
+
+        listNouriture.add(nouriture);
+        testMangeroK();
+        listNouriture.add(nouriture2);
+        testMangeroK();
+        listNouriture.add(nouriture3);
+        testMangernOToK();
+
+    }
+
+    @Test
     public void testMangeroK() throws NourritureNotFundExcepton {
-        int quantite = 10;
+
         int ancienPoids = animal1.getPoids();
         int ancienneVitesse = animal1.getVitesse();
 
         animal1.manger(quantite);
 
-        assertTrue(animal1.getPoids()==500 );
+        assertTrue(animal1.getPoids()==ancienPoids * quantite * 10 );
         assertTrue(animal1.getVitesse()==75);
     }
 

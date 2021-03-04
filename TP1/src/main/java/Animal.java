@@ -1,5 +1,7 @@
-    
-    /**
+import java.util.ArrayList;
+import java.util.stream.Collector;
+
+/**
      * Décrivez votre classe Animal ici.
      *
      * @author (votre nom)
@@ -11,12 +13,12 @@
         // les Attributs
         private int vitesse;
         private int poids;
-        private Nouriture nouriture;
+        private ArrayList<Nouriture> nouriture = new ArrayList<Nouriture>();
 
         public Animal() {
         }
 
-        public Animal(int vitesse, int poids, Nouriture nouriture) {
+        public Animal(int vitesse, int poids, ArrayList<Nouriture> nouriture) {
             this.vitesse = vitesse;
             this.poids = poids;
             this.nouriture = nouriture;
@@ -44,17 +46,17 @@
             this.poids = poids;
         }
 
-        public Nouriture getNouriture() {
+        public ArrayList<Nouriture> getNouriture() {
             return nouriture;
         }
 
-        public void setNouriture(Nouriture nouriture) {
-            this.nouriture = nouriture;
+        public void AddNouriture(Nouriture nouriture) {
+            this.nouriture.add(nouriture);
         }
 
         public void manger(int quantite) throws NourritureNotFundExcepton {
             if(nouriture!=null){
-                this.poids = quantite * this.nouriture.coeff * this.poids;
+                this.poids=this.nouriture.stream().map(x -> x.getCoeff()* this.poids * quantite).reduce(0,(x,y) -> x+y);
                 this.vitesse+= this.vitesse * (1/this.poids);
             }else{
                 throw new NourritureNotFundExcepton();
