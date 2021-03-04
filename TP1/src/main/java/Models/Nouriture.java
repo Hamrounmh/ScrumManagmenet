@@ -1,6 +1,7 @@
+package Models;
 
 /**
- * Décrivez votre classe Nouriture ici.
+ * Décrivez votre classe Animals.Nouriture ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)

@@ -1,6 +1,10 @@
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import Models.Animal;
+import Models.Nouriture;
+import Exceptions.NourritureNotFundExcepton;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -101,7 +105,7 @@ public class testAnimal
         assertFalse(animal1.getVitesse()==2);
     }
    /* @Test
-    public void testMangerNoNourittureException() throws NourritureNotFundExcepton {
+    public void testMangerNoNourittureException() throws Exceptions.NourritureNotFundExcepton {
         int quantite = 10;
         int ancienPoids = animal1.getPoids();
         int ancienneVitesse = animal1.getVitesse();
@@ -109,7 +113,7 @@ public class testAnimal
         animal1.setNouriture(null);
 
 
-        assertThrows(NourritureNotFundExcepton.class, animal1.manger(quantite));
+        assertThrows(Exceptions.NourritureNotFundExcepton.class, animal1.manger(quantite));
 
 
     }*/

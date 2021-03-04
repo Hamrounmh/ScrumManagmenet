@@ -1,8 +1,11 @@
+package Models;
+
+import Exceptions.NourritureNotFundExcepton;
+
 import java.util.ArrayList;
-import java.util.stream.Collector;
 
 /**
-     * Décrivez votre classe Animal ici.
+     * Décrivez votre classe Animals.Animal ici.
      *
      * @author (votre nom)
      * @version (un numéro de version ou une date)
