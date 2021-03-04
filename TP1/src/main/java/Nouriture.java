@@ -8,22 +8,30 @@
 public class Nouriture
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    public String type;
+    public String nom;
+    public int coeff;
 
-    /**
-     * Constructeur d'objets de classe Nouriture
-     * 
-     */
-    public Nouriture()
-    {
-        // initialisation des variables d'instance
-        type = "";
+    public Nouriture(String nom, int coeff) {
+        this.nom = nom;
+        this.coeff = coeff;
     }
 
+    public Nouriture() {
+    }
 
-    public void setTypeNouriture(String typeN )
-    {
-        // Insérez votre code ici
-        this.type=typeN;
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getCoeff() {
+        return coeff;
+    }
+
+    public void setCoeff(int coeff) {
+        this.coeff = coeff;
     }
 }

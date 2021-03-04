@@ -13,7 +13,7 @@ public class testAnimal
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-   protected Animal Animal1;
+   protected Animal animal1;
    protected Nouriture nouriture;
 
     /**
@@ -35,10 +35,12 @@ public class testAnimal
         // ;Initialisez ici vos engagements
          
          nouriture=new Nouriture();
-         nouriture.setTypeNouriture("viande");
-         Animal1= new Animal();
-         Animal1.setNouriture(nouriture);
-         
+         nouriture.setNom("viande");
+         nouriture.setCoeff(10);
+         animal1= new Animal(75,5);
+         animal1.setNouriture(nouriture);
+
+
         
     }
 
@@ -54,9 +56,40 @@ public class testAnimal
     }
 
     @Test
-    public void testEstCarnivore()
-    {
-        assertTrue(Animal1.estCarnivore()==true);
+    public void testMangeroK() throws NourritureNotFundExcepton {
+        int quantite = 10;
+        int ancienPoids = animal1.getPoids();
+        int ancienneVitesse = animal1.getVitesse();
+
+        animal1.manger(quantite);
+
+        assertTrue(animal1.getPoids()==500 );
+        assertTrue(animal1.getVitesse()==75);
     }
+
+    @Test
+    public void testMangernOToK() throws NourritureNotFundExcepton {
+        int quantite = 10;
+        int ancienPoids = animal1.getPoids();
+        int ancienneVitesse = animal1.getVitesse();
+
+        animal1.manger(quantite);
+
+        assertFalse(animal1.getPoids()==200 );
+        assertFalse(animal1.getVitesse()==2);
+    }
+   /* @Test
+    public void testMangerNoNourittureException() throws NourritureNotFundExcepton {
+        int quantite = 10;
+        int ancienPoids = animal1.getPoids();
+        int ancienneVitesse = animal1.getVitesse();
+
+        animal1.setNouriture(null);
+
+
+        assertThrows(NourritureNotFundExcepton.class, animal1.manger(quantite));
+
+
+    }*/
 }
 

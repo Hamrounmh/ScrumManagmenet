@@ -7,59 +7,58 @@
      */
     public class Animal
     {
+
         // les Attributs
-        private String race;
         private int vitesse;
+        private int poids;
         private Nouriture nouriture;
-        /**
-         * Constructeur d'objets de classe Animal
-         */
-        public Animal()
-        {
-            // initialisation des variables d'instance
-            this.race = "carnivore";
-            this.vitesse= 0;
+
+        public Animal() {
         }
-    
-        /**
-         * les Méthodes
-         * 
-         */
-        public void setRace(String Race)
-        {
-            // Insérez votre code ici
-            this.race=Race;
+
+        public Animal(int vitesse, int poids, Nouriture nouriture) {
+            this.vitesse = vitesse;
+            this.poids = poids;
+            this.nouriture = nouriture;
         }
-        
-        public void setVitesse (int vitesseAnimal)
-        {
-            this.vitesse=vitesseAnimal;
+
+        public Animal(int vitesse, int poids) {
+            this.vitesse = vitesse;
+            this.poids = poids;
+
         }
-        
-        public String getRace()
-        {
-            return this.race;
+
+        public int getVitesse() {
+            return vitesse;
         }
-        
-        public int getVitesse()
-        {
-            return this.vitesse;
+
+        public void setVitesse(int vitesse) {
+            this.vitesse = vitesse;
         }
-        
-        public void setNouriture (Nouriture nouriture)
-        {
-            this.nouriture=nouriture;
+
+        public int getPoids() {
+            return poids;
         }
-        
-        
-        public boolean estCarnivore()
-        {
-            if(this.nouriture.type.toLowerCase()=="viande")
-               return true;
-            else
-                return false;
+
+        public void setPoids(int poids) {
+            this.poids = poids;
         }
-        
-        
-        
+
+        public Nouriture getNouriture() {
+            return nouriture;
+        }
+
+        public void setNouriture(Nouriture nouriture) {
+            this.nouriture = nouriture;
+        }
+
+        public int manger(int quantite) throws NourritureNotFundExcepton {
+            if(nouriture!=null){
+                this.poids = quantite * this.nouriture.coeff * this.poids;
+                this.vitesse+= this.vitesse * (1/this.poids);
+            }else{
+                throw new NourritureNotFundExcepton();
+            }
+return 0;
+        }
     }
