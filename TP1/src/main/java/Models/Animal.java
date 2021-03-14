@@ -57,10 +57,11 @@ import java.util.ArrayList;
             this.nouriture.add(nouriture);
         }
 
-        public void manger(int quantite) throws NourritureNotFundExcepton {
+        public boolean manger(int quantite) throws NourritureNotFundExcepton {
             if(nouriture!=null){
                 this.poids=this.nouriture.stream().map(x -> x.getCoeff()* this.poids * quantite).reduce(0,(x,y) -> x+y);
                 this.vitesse+= this.vitesse * (1/this.poids);
+                return true;
             }else{
                 throw new NourritureNotFundExcepton();
             }
