@@ -90,7 +90,6 @@ public class testAnimal
         animal1.manger(quantite);
 
         assertTrue(animal1.getPoids()==ancienPoids * quantite * 10 );
-        assertTrue(animal1.getVitesse()==75);
     }
 
     @Test
