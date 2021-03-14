@@ -27,7 +27,6 @@ public class US_0003StepDefTests {
     }
 
 
-
     @And("On donne la nouriture (.*) (\\d+)")
     public void onDonneLaNouritureNomNouritureTauxDeGras(String nomNouriture,int TauxDeGras) {
         Nouriture nouriture = new Nouriture(nomNouriture,TauxDeGras);
