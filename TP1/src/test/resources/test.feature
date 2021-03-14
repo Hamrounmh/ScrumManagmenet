@@ -36,13 +36,16 @@ Feature: US_0003
      |message          |
      |pas_de_nourriture|
 
-  Scenario Outline: S1
+
+
+  Scenario Outline: on crée un objet nourriture et quand on ajoute le nom et le taux de grasse on teste le nombre de calories retournées
     Given  une nourriture
     And un <nom> et un <TauxDeGras>
+    Then on retourne <nombreDeCalorie>
 
     Examples:
-    | nom | TauxDeGras|
-    |viande|   5       |
+    | nom | TauxDeGras|nombreDeCalorie|
+    |eau  |   5       |0                 |
 
 
 

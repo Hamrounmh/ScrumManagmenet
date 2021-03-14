@@ -88,4 +88,9 @@ public class US_0003StepDefTests {
     }
 
 
+    @Then("^on retourne (\\d+)$")
+    public void onRetourneNombreDeCalorie(int nbCalorie) {
+        nbCalorie=nourriture1.nombreDeColorie();
+        assertTrue(nbCalorie==0);
+    }
 }
