@@ -25,4 +25,8 @@ public class MyStepdefs {
     public void verifiee() {
         assertTrue(1==1);
     }
+
+    @And("On donne la nouriture <nomNouriture> <TauxDeGras>")
+    public void onDonneLaNouritureNomNouritureTauxDeGras() {
+    }
 }

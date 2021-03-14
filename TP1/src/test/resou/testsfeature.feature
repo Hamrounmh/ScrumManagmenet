@@ -16,6 +16,7 @@ Feature: US_00004: En tant que testeur, je souhaite que mon animal manges toutes
     Given un animal
     And avec <poids> et <vitesse>
     And On donne la nouriture <nomNouriture> <TauxDeGras>
+    And On ajoute la nouriture <nomNouriture> <TauxDeGras>
     When l'animal mange une <quantite> de nouriture
     Then le poids de l'animal devient <nouveauPoids> et la vitesse devient <nouvelleVitesse>
     Examples:
