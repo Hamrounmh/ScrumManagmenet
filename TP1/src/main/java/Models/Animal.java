@@ -68,6 +68,16 @@ import java.util.ArrayList;
 
         }
 
+        public static void main(String[] args) {
+            Animal animal = new Animal(7     ,99   );
+            Nouriture nou = new Nouriture("tt",9);
+            animal.AddNouriture(nou); animal.AddNouriture(new Nouriture("tt",2));
+            try {
+                animal.manger(10);
+            } catch (NourritureNotFundExcepton nourritureNotFundExcepton) {
+                nourritureNotFundExcepton.printStackTrace();
+            }
 
+        }
 
     }

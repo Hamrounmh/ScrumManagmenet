@@ -16,7 +16,7 @@ Feature: US_0003
 
 
 
-  Scenario Outline: Mon animal doit augmenter son poids et ça vitesse d'un taux de gras en  mangeant une quantite de nourriture avec un taux de gras connue
+  Scenario Outline: Mon animal doit augmenter son poids et ça vitesse d'un taux de gras en  mangeant plusieurs nourriture avec un taux de gras connue
     Given un animal
     And avec <poids> et <vitesse>
     And On donne la nouriture <nomNouriture> et <TauxDeGras>
@@ -26,7 +26,7 @@ Feature: US_0003
 
     Examples:
       | poids | vitesse | nomNouriture |nomNouriture1|TauxDeGras|TauxDeGras1|quantite|nouveauPoids|nouvelleVitesse|
-      |99      |7       |viande        |herbe        |9         |2         |10      |8910          |8             |
+      |99      |7       |viande        |herbe        |9         |2         |10      |10890          |8             |
 
   Scenario Outline: On donne a l'animal une liste vide de nourriture. quandl'animal mange on doit avoir le message d'erreur Nourriture indisponible
     Given un animal
