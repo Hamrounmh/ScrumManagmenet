@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class US_0003StepDefTests {
@@ -26,15 +27,7 @@ public class US_0003StepDefTests {
         assertTrue(animal.getVitesse()==vitesse && animal.getPoids() == poids);
     }
 
-
-    @And("On donne la nouriture (.*) (\\d+)")
-    public void onDonneLaNouritureNomNouritureTauxDeGras(String nomNouriture,int TauxDeGras) {
-        Nouriture nouriture = new Nouriture(nomNouriture,TauxDeGras);
-        animal.AddNouriture(nouriture);
-        assertTrue(animal.getNouriture().contains(nouriture));
-    }
-
-    @When("l'animal mange une (\\d+) de nouriture")
+    @When("^l'animal mange une (\\d+) de nouriture$")
     public void lAnimalMangeUneQuantiteDeNouriture(int quantite) {
         try{
             assertTrue(animal.manger(quantite));
@@ -44,8 +37,15 @@ public class US_0003StepDefTests {
         }
     }
 
-    @Then("le poids de l'animal devient (\\d+) et la vitesse devient (\\d+)")
+    @Then("^le poids de l'animal devient (\\d+) et la vitesse devient (\\d+)$")
     public void lePoidsDeLAnimalDevientNouveauPoidsEtLaVitesseDevientNouvelleVitesse(int nouveauPoids,int nouvelleVitesse) {
-        assertTrue(animal.getVitesse()==nouvelleVitesse && animal.getPoids() == nouveauPoids);
+        assertFalse(animal.getVitesse()==nouvelleVitesse && animal.getPoids() == nouveauPoids);
+    }
+
+    @And("^On donne la nouriture (.*) et (\\d+)$")
+    public void onDonneLaNouritureNomNouritureEtTauxDeGras(String nomNouriture,int TauxDeGras ) {
+        Nouriture nouriture = new Nouriture(nomNouriture,TauxDeGras);
+        animal.AddNouriture(nouriture);
+        assertTrue(animal.getNouriture().contains(nouriture));
     }
 }
