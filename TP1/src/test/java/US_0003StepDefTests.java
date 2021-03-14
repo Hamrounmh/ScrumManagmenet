@@ -64,8 +64,6 @@ public class US_0003StepDefTests {
     }
 
 
-
-
     @When("^l'animal mange$")
     public void lAnimalMange() {
         animal.setPoids(10);
@@ -73,6 +71,16 @@ public class US_0003StepDefTests {
     }
 
 
+    @Given("^une nourriture$")
+    public void uneNourriture() {
+        Nouriture nourriture1= new Nouriture();
+        assertTrue(nourriture1 instanceof Nouriture);
+    }
+
+    @And("^un <nom> et un <TauxDeGras>$")
+    public void unNomEtUnTauxDeGras() {
+
+    }
 
 
 }
