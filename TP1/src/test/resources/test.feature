@@ -17,9 +17,13 @@ Feature: US_0003
 
   Scenario Outline: On donne a l'animal une liste vide de nourriture. quandl'animal mange on doit avoir le message d'erreur Nourriture indisponible
     Given un animal
-    When l'animal mange une <quantite> de nouriture
+    When l'animal mange
     Then on a le message d'erreur suivant <message>
     Examples:
-     |quantite|message          |
-     | 10     |pas_de_nourriture|
+     |message          |
+     |pas_de_nourriture|
+
+
+
+
 

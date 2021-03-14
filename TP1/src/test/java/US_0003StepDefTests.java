@@ -12,6 +12,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class US_0003StepDefTests {
+
     Animal animal = new Animal();
     ArrayList<Nouriture> listeNourriture= new ArrayList<>();
     @Given("^un animal$")
@@ -37,6 +38,7 @@ public class US_0003StepDefTests {
         }
     }
 
+
     @Then("^le poids de l'animal devient (\\d+) et la vitesse devient (\\d+)$")
     public void lePoidsDeLAnimalDevientNouveauPoidsEtLaVitesseDevientNouvelleVitesse(int nouveauPoids,int nouvelleVitesse) {
         assertTrue(animal.getVitesse()==nouvelleVitesse && animal.getPoids() == nouveauPoids);
@@ -49,13 +51,28 @@ public class US_0003StepDefTests {
         assertTrue(animal.getNouriture().contains(nouriture));
     }
 
+
+
     @Then("^on a le message d'erreur suivant (.*)$")
     public void onALeMessageDErreurSuivantMessage(String message) {
         try{
-            animal.manger(0);
+            animal.manger(10);
 
         }catch (NourritureNotFundExcepton e){
             assertTrue(e.getMessage().equals(message));
         }
     }
+
+
+
+
+    @When("^l'animal mange$")
+    public void lAnimalMange() {
+        animal.setPoids(10);
+        animal.setVitesse(5);
+    }
+
+
+
+
 }
