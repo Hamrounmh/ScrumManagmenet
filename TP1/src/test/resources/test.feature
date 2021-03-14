@@ -9,11 +9,11 @@ Feature: US_0003
 
       Examples:
         | poids | vitesse | nomNouriture |TauxDeGras|quantite|nouveauPoids|nouvelleVitesse|
-        |5      |10       |viande        |5         |10      |15          |25             |
-        |5      |10       |herbe         |8         |10      |15          |25             |
-        |5      |10       |viande        |5         |10      |15          |25             |
-        |5      |10       |viande        |5         |10      |15          |25             |
-        |5      |10       |viande        |5         |10      |15          |25             |
+        |99      |7       |viande        |9         |10      |8910          |8             |
+        |5      |56       |herbe         |2         |99      |990          |67            |
+        |3      |10       |poivre        |2         |78      |468          |12             |
+        |8      |18       |patate        |1         |18      |144         |21             |
+
 
   Scenario Outline: On donne a l'animal une liste vide de nourriture. quandl'animal mange on doit avoir le message d'erreur Nourriture indisponible
     Given un animal

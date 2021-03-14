@@ -60,11 +60,14 @@ import java.util.ArrayList;
         public boolean manger(int quantite) throws NourritureNotFundExcepton {
             if(nouriture!=null){
                 this.poids=this.nouriture.stream().map(x -> x.getCoeff()* this.poids * quantite).reduce(0,(x,y) -> x+y);
-                this.vitesse+= this.vitesse * (1/this.poids);
+                this.vitesse+= this.vitesse * 0.2;
                 return true;
             }else{
                 throw new NourritureNotFundExcepton();
             }
 
         }
+
+
+
     }

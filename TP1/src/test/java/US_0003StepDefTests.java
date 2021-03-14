@@ -39,7 +39,7 @@ public class US_0003StepDefTests {
 
     @Then("^le poids de l'animal devient (\\d+) et la vitesse devient (\\d+)$")
     public void lePoidsDeLAnimalDevientNouveauPoidsEtLaVitesseDevientNouvelleVitesse(int nouveauPoids,int nouvelleVitesse) {
-        assertFalse(animal.getVitesse()==nouvelleVitesse && animal.getPoids() == nouveauPoids);
+        assertTrue(animal.getVitesse()==nouvelleVitesse && animal.getPoids() == nouveauPoids);
     }
 
     @And("^On donne la nouriture (.*) et (\\d+)$")
