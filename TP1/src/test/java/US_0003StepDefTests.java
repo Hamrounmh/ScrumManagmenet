@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class US_0003StepDefTests {
 
     Animal animal = new Animal();
+    Nouriture nourriture1;
     ArrayList<Nouriture> listeNourriture= new ArrayList<>();
     @Given("^un animal$")
     public void unAnimal() {
@@ -73,12 +74,16 @@ public class US_0003StepDefTests {
 
     @Given("^une nourriture$")
     public void uneNourriture() {
-        Nouriture nourriture1= new Nouriture();
+         nourriture1= new Nouriture();
         assertTrue(nourriture1 instanceof Nouriture);
     }
 
-    @And("^un <nom> et un <TauxDeGras>$")
-    public void unNomEtUnTauxDeGras() {
+    @And("^un (.*) et un (\\d+)$")
+    public void unNomEtUnTauxDeGras(String nom, int tauxDeGras) {
+        nourriture1.setCoeff(tauxDeGras);
+        nourriture1.setNom(nom);
+        assertTrue(nourriture1.getNom()==nom);
+        assertTrue(nourriture1.getCoeff()==tauxDeGras);
 
     }
 

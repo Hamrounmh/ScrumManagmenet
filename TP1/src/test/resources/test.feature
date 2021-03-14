@@ -36,9 +36,14 @@ Feature: US_0003
      |message          |
      |pas_de_nourriture|
 
-  Scenario: S1
+  Scenario Outline: S1
     Given  une nourriture
     And un <nom> et un <TauxDeGras>
+
+    Examples:
+    | nom | TauxDeGras|
+    |viande|   5       |
+
 
 
 

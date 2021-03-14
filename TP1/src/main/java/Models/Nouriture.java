@@ -35,4 +35,16 @@ public class Nouriture
     public void setCoeff(int coeff) {
         this.coeff = coeff;
     }
+
+    public int nombreDeColorie(){
+        int nbCalorie=0;
+        switch (nom){
+            case "viande" : nbCalorie=143; break;
+            case "poivre"   : nbCalorie=251; break;
+            case "herbe"   : nbCalorie=150; break;
+            case "eau"   : nbCalorie=0; break;
+
+        }
+        return nbCalorie;
+    }
 }
