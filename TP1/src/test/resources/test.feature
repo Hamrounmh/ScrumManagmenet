@@ -15,3 +15,11 @@ Feature: US_0003
         |5      |10       |viande        |5         |10      |15          |25             |
         |5      |10       |viande        |5         |10      |15          |25             |
 
+  Scenario Outline: On donne a l'animal une liste vide de nourriture. quandl'animal mange on doit avoir le message d'erreur Nourriture indisponible
+    Given un animal
+    When l'animal mange une <quantite> de nouriture
+    Then on a le message d'erreur suivant <message>
+    Examples:
+     |quantite|message          |
+     | 10     |pas_de_nourriture|
+

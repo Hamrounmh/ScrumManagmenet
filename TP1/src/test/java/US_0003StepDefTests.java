@@ -48,4 +48,14 @@ public class US_0003StepDefTests {
         animal.AddNouriture(nouriture);
         assertTrue(animal.getNouriture().contains(nouriture));
     }
+
+    @Then("^on a le message d'erreur suivant (.*)$")
+    public void onALeMessageDErreurSuivantMessage(String message) {
+        try{
+            animal.manger(0);
+
+        }catch (NourritureNotFundExcepton e){
+            assertTrue(e.getMessage().equals(message));
+        }
+    }
 }
