@@ -7,3 +7,4 @@ Feature: US_00003
  Examples:
    | poids | vitesse |
    | 15    | 20      |
+
