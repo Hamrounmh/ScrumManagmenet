@@ -1,0 +1,38 @@
+
+/**
+ * Décrivez votre classe Salle ici.
+ *
+ * @author (votre nom)
+ * @version (un numéro de version ou une date)
+ */
+public class Salle
+{
+    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    private int num;
+    private int places;
+
+    /**
+     * Constructeur d'objets de classe Salle
+     */
+    public Salle(int n, int m)
+    {
+        // initialisation des variables d'instance
+        this.num = n;
+        this.places = m;
+    }
+
+    /**
+     * Un exemple de méthode - remplacez ce commentaire par le vôtre
+     *
+     * @param  y   le paramètre de la méthode
+     * @return     la somme de x et de y
+     */
+    public int getNum(){
+        return this.num;
+    }
+    public int getPlaces(){
+        return this.places;
+    }
+
+    
+}

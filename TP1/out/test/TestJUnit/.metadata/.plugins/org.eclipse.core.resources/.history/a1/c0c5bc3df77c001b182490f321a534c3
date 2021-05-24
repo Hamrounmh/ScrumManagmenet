@@ -1,0 +1,5 @@
+package BlueJ;
+
+public @interface BeforeEach {
+
+}

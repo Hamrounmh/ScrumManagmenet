@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\33767\Dropbox\IF\Agile\TestJUnit\.metadata\.plugins\org.eclipse.jdt.core
+2710055621.index

@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+
+/**
+ * Décrivez votre classe Cinéma ici.
+ *
+ * @author (votre nom)
+ * @version (un numéro de version ou une date)
+ */
+public class Cinéma
+{
+    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    private String nom;
+    private String ville;
+    private ArrayList<Salle> salles;
+
+    /**
+     * Constructeur d'objets de classe Cinéma
+     */
+    public Cinéma()
+    {
+        // initialisation des variables d'instance
+        this.salles = new ArrayList();
+        
+    }
+    
+     public String getNom() {
+        return nom;
+    }
+    
+    public int getNombreSalles(){
+        return salles.size();
+    }
+        
+
+
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public void addSalle(Salle s){
+        salles.add(s);
+    }
+    /**
+     * Un exemple de méthode - remplacez ce commentaire par le vôtre
+     *
+     * @param  y   le paramètre de la méthode
+     * @return     la somme de x et de y
+     */
+      
+   public String affi_cin(){
+
+        return "Ce cinéma s'appelle " + this.getNom() + " et se trouve à " + this.getVille();
+
+    
+  }
+  
+  public String AfficheSalles(){
+      String s;
+      s = "le cinéma contient " + this.getNombreSalles() + " salles";
+      return s;
+    }
+    public int getNbPlacesTotal(){
+        int nbt = 0;
+      String s = "le cinéma contient " + this.getNombreSalles() + " salles";
+      for (int i = 0; i<this.getNombreSalles(); i++){
+          nbt += salles.get(i).getPlaces();
+        }
+        return nbt;
+    }
+}
