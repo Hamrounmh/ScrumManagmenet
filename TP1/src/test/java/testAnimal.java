@@ -3,8 +3,9 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import Models.Animal;
+import Models.Chat;
 import Models.Chien;
-import Models.Nouriture;
+import Models.Nourriture;
 import Exceptions.NourritureNotFundExcepton;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,8 +21,9 @@ public class testAnimal
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-   protected Animal animal1;
-   protected Nouriture nouriture;
+   protected Animal chien;
+   protected Animal chat;
+   protected Nourriture nourriture;
 
    protected int quantite ;
     /**
@@ -44,14 +46,17 @@ public class testAnimal
 
          quantite = 10;
 
-         nouriture=new Nouriture();
-         nouriture.setNom("viande");
-         nouriture.setCoeff(10);
+         nourriture =new Nourriture();
+         nourriture.setNom("viande");
+         nourriture.setCoeff(10);
 
+         //chien
+         chien = new Chien(75,5);
+         chien.AddNouriture(nourriture);
 
-         animal1= new Chien(75,5);
-         animal1.AddNouriture(nouriture);
-
+         //chat
+         chat= new Chat(50,4);
+         chat.AddNouriture(nourriture);
 
         
     }
@@ -69,53 +74,42 @@ public class testAnimal
 
     @Test
     public void testMangerList() throws NourritureNotFundExcepton {
-        Nouriture nouriture2=new Nouriture("eau",10);
-        Nouriture nouriture3=new Nouriture();
-        ArrayList<Nouriture> listNouriture = new ArrayList<Nouriture>();
+        Nourriture nourriture3 =new Nourriture();
+        ArrayList<Nourriture> listNourriture = new ArrayList<>();
 
-        listNouriture.add(nouriture);
+        listNourriture.add(nourriture);
         testMangeroK();
-        listNouriture.add(nouriture2);
-        testMangeroK();
-        listNouriture.add(nouriture3);
+        listNourriture.add(nourriture3);
         testMangernOToK();
 
     }
 
     @Test
     public void testMangeroK() throws NourritureNotFundExcepton {
+        chien.manger(quantite);
+        int chien_ancien_poids= chien.getPoids();
+        chat.manger(quantite);
+        int chat_ancien_poids= chat.getPoids();
 
-        int ancienPoids = animal1.getPoids();
-        int ancienneVitesse = animal1.getVitesse();
+        assertEquals(chien.getPoids(),500);
+        assertEquals(chien.getVitesse(),97);
 
-        animal1.manger(quantite);
-
-        assertTrue(animal1.getPoids()==ancienPoids * quantite * 10 );
+        assertEquals(chat.getPoids(),400);
+        assertEquals(chat.getVitesse(),55);
     }
 
     @Test
     public void testMangernOToK() throws NourritureNotFundExcepton {
         int quantite = 10;
-        int ancienPoids = animal1.getPoids();
-        int ancienneVitesse = animal1.getVitesse();
 
-        animal1.manger(quantite);
+        chien.manger(quantite);
 
-        assertFalse(animal1.getPoids()==200 );
-        assertFalse(animal1.getVitesse()==2);
+        assertNotEquals(chien.getPoids(),200 );
+        assertNotEquals(chien.getVitesse(),2);
+
+        assertNotEquals(chat.getPoids(),150);
+        assertNotEquals(chat.getVitesse(),6);
     }
-   /* @Test
-    public void testMangerNoNourittureException() throws Exceptions.NourritureNotFundExcepton {
-        int quantite = 10;
-        int ancienPoids = animal1.getPoids();
-        int ancienneVitesse = animal1.getVitesse();
 
-        animal1.setNouriture(null);
-
-
-        assertThrows(Exceptions.NourritureNotFundExcepton.class, animal1.manger(quantite));
-
-
-    }*/
 }
 
