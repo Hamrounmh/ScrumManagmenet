@@ -11,13 +11,24 @@ public class Nouriture
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     public String nom;
     public int coeff;
+    public int nbCalorie;
 
     public Nouriture(String nom, int coeff) {
         this.nom = nom;
         this.coeff = coeff;
+
+        switch (nom){
+            case "viande" : nbCalorie=143;  break;
+            case "poivre"   : nbCalorie=251;  break;
+            case "herbe"   : nbCalorie=150;  break;
+            case "eau"   : nbCalorie=0;  break;
+
+        }
     }
 
     public Nouriture() {
+
+
     }
 
     public String getNom() {
@@ -37,14 +48,7 @@ public class Nouriture
     }
 
     public int nombreDeColorie(){
-        int nbCalorie=0;
-        switch (nom){
-            case "viande" : nbCalorie=143; break;
-            case "poivre"   : nbCalorie=251; break;
-            case "herbe"   : nbCalorie=150; break;
-            case "eau"   : nbCalorie=0; break;
-
-        }
         return nbCalorie;
     }
+
 }
