@@ -1,5 +1,6 @@
 import Exceptions.NourritureNotFundExcepton;
 import Models.Animal;
+import Models.Chien;
 import Models.Nouriture;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class US_0003StepDefTests {
 
-    Animal animal = new Animal();
+    Animal animal = new Chien();
     Nouriture nourriture1;
     ArrayList<Nouriture> listeNourriture= new ArrayList<>();
     @Given("^un animal$")
@@ -32,7 +33,7 @@ public class US_0003StepDefTests {
     @When("^l'animal mange une (\\d+) de nouriture$")
     public void lAnimalMangeUneQuantiteDeNouriture(int quantite) {
         try{
-            assertTrue(animal.manger(quantite));
+            assertTrue(animal.manger(quantite ));
 
         }catch (NourritureNotFundExcepton e){
 
@@ -46,7 +47,7 @@ public class US_0003StepDefTests {
     }
 
     @And("^On donne la nouriture (.*) et (\\d+)$")
-    public void onDonneLaNouritureNomNouritureEtTauxDeGras(String nomNouriture,int TauxDeGras ) {
+    public void onDonneLaNouritureNomNouritureEtTauxDeGras(String nomNouriture,int TauxDeGras) {
         Nouriture nouriture = new Nouriture(nomNouriture,TauxDeGras);
         animal.AddNouriture(nouriture);
         assertTrue(animal.getNouriture().contains(nouriture));
@@ -57,7 +58,7 @@ public class US_0003StepDefTests {
     @Then("^on a le message d'erreur suivant (.*)$")
     public void onALeMessageDErreurSuivantMessage(String message) {
         try{
-            animal.manger(10);
+            animal.manger(10 );
 
         }catch (NourritureNotFundExcepton e){
             assertTrue(e.getMessage().equals(message));

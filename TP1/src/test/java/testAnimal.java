@@ -3,6 +3,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import Models.Animal;
+import Models.Chien;
 import Models.Nouriture;
 import Exceptions.NourritureNotFundExcepton;
 import org.junit.jupiter.api.AfterEach;
@@ -48,7 +49,7 @@ public class testAnimal
          nouriture.setCoeff(10);
 
 
-         animal1= new Animal(75,5);
+         animal1= new Chien(75,5);
          animal1.AddNouriture(nouriture);
 
 
