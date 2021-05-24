@@ -1,7 +1,7 @@
 import Exceptions.NourritureNotFundExcepton;
 import Models.Animal;
 import Models.Chien;
-import Models.Nouriture;
+import Models.Nourriture;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,14 +9,14 @@ import io.cucumber.java.en.When;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class US_0003StepDefTests {
 
     Animal animal = new Chien();
-    Nouriture nourriture1;
-    ArrayList<Nouriture> listeNourriture= new ArrayList<>();
+    Nourriture nourriture1;
+    ArrayList<Nourriture> listeNourriture= new ArrayList<>();
     @Given("^un animal$")
     public void unAnimal() {
         assertTrue(animal instanceof Animal);
@@ -36,7 +36,7 @@ public class US_0003StepDefTests {
             assertTrue(animal.manger(quantite ));
 
         }catch (NourritureNotFundExcepton e){
-
+            e.getMessage();
         }
     }
 
@@ -48,9 +48,9 @@ public class US_0003StepDefTests {
 
     @And("^On donne la nouriture (.*) et (\\d+)$")
     public void onDonneLaNouritureNomNouritureEtTauxDeGras(String nomNouriture,int TauxDeGras) {
-        Nouriture nouriture = new Nouriture(nomNouriture,TauxDeGras);
-        animal.AddNouriture(nouriture);
-        assertTrue(animal.getNouriture().contains(nouriture));
+        Nourriture nourriture = new Nourriture(nomNouriture,TauxDeGras);
+        animal.AddNouriture(nourriture);
+        assertTrue(animal.getNouriture().contains(nourriture));
     }
 
 
@@ -61,7 +61,7 @@ public class US_0003StepDefTests {
             animal.manger(10 );
 
         }catch (NourritureNotFundExcepton e){
-            assertTrue(e.getMessage().equals(message));
+            assertEquals(e.getMessage(),message);
         }
     }
 
@@ -75,22 +75,22 @@ public class US_0003StepDefTests {
 
     @Given("^une nourriture$")
     public void uneNourriture() {
-         nourriture1= new Nouriture();
-        assertTrue(nourriture1 instanceof Nouriture);
+         nourriture1= new Nourriture();
+        assertTrue(nourriture1 instanceof Nourriture);
     }
 
     @And("^un (.*) et un (\\d+)$")
     public void unNomEtUnTauxDeGras(String nom, int tauxDeGras) {
         nourriture1.setCoeff(tauxDeGras);
         nourriture1.setNom(nom);
-        assertTrue(nourriture1.getNom()==nom);
-        assertTrue(nourriture1.getCoeff()==tauxDeGras);
+        assertSame(nourriture1.getNom(),nom);
+        assertSame(nourriture1.getCoeff(),tauxDeGras);
 
     }
 
 
     @Then("^on retourne (\\d+)$")
     public void onRetourneNombreDeCalorie(int nbCalorie) {
-        assertTrue(nbCalorie==nourriture1.nombreDeColorie());
+        assertEquals(nbCalorie,nourriture1.nombreDeColorie());
     }
 }
