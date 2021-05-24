@@ -6,14 +6,14 @@ package Models;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Nouriture
+public class Nourriture
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     public String nom;
     public int coeff;
     public int nbCalorie;
 
-    public Nouriture(String nom, int coeff) {
+    public Nourriture(String nom, int coeff) {
         this.nom = nom;
         this.coeff = coeff;
 
@@ -26,7 +26,7 @@ public class Nouriture
         }
     }
 
-    public Nouriture() {
+    public Nourriture() {
 
 
     }
