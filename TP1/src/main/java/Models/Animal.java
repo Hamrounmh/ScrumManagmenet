@@ -16,15 +16,15 @@ import java.util.ArrayList;
         // les Attributs
         protected int vitesse;
         protected int poids;
-        protected ArrayList<Nouriture> nouriture = new ArrayList<Nouriture>();
+        protected ArrayList<Nourriture> nourriture = new ArrayList<>();
 
         public Animal() {
         }
 
-        public Animal(int vitesse, int poids, ArrayList<Nouriture> nouriture) {
+        public Animal(int vitesse, int poids, ArrayList<Nourriture> nourriture) {
             this.vitesse = vitesse;
             this.poids = poids;
-            this.nouriture = nouriture;
+            this.nourriture = nourriture;
         }
 
         public Animal(int vitesse, int poids) {
@@ -49,12 +49,12 @@ import java.util.ArrayList;
             this.poids = poids;
         }
 
-        public ArrayList<Nouriture> getNouriture() {
-            return nouriture;
+        public ArrayList<Nourriture> getNouriture() {
+            return nourriture;
         }
 
-        public void AddNouriture(Nouriture nouriture) {
-            this.nouriture.add(nouriture);
+        public void AddNouriture(Nourriture nourriture) {
+            this.nourriture.add(nourriture);
         }
 
         public abstract boolean manger(int quantite) throws NourritureNotFundExcepton;
