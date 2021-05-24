@@ -59,4 +59,6 @@ import java.util.ArrayList;
 
         public abstract boolean manger(int quantite) throws NourritureNotFundExcepton;
 
+        public abstract void AddFilm(Film f);
+
     }
