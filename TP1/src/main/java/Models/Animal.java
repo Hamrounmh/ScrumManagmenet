@@ -10,13 +10,13 @@ import java.util.ArrayList;
      * @author (votre nom)
      * @version (un numéro de version ou une date)
      */
-    public class Animal
+    public abstract class Animal
     {
 
         // les Attributs
-        private int vitesse;
-        private int poids;
-        private ArrayList<Nouriture> nouriture = new ArrayList<Nouriture>();
+        protected int vitesse;
+        protected int poids;
+        protected ArrayList<Nouriture> nouriture = new ArrayList<Nouriture>();
 
         public Animal() {
         }
@@ -57,16 +57,6 @@ import java.util.ArrayList;
             this.nouriture.add(nouriture);
         }
 
-        public boolean manger(int quantite) throws NourritureNotFundExcepton {
-            if(nouriture!=null){
-                this.poids=this.nouriture.stream().map(x -> x.getCoeff()* this.poids * quantite).reduce(0,(x,y) -> x+y);
-                this.vitesse+= this.vitesse * 0.2;
-                return true;
-            }else{
-                throw new NourritureNotFundExcepton();
-            }
-
-        }
-
+        public abstract boolean manger(int quantite) throws NourritureNotFundExcepton;
 
     }
