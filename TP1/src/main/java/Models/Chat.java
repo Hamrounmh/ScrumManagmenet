@@ -2,20 +2,33 @@ package Models;
 
 import Exceptions.NourritureNotFundExcepton;
 
+import java.util.ArrayList;
+
 public class Chat extends  Animal{
 
-    public Chat(){
+    public Chat() {
         super();
     }
 
+    public Chat(int vitesse, int poids, ArrayList<Nourriture> nourriture) {
+        super(vitesse,poids, nourriture);
+    }
+
+
+    public Chat(int vitesse, int poids) {
+        super(vitesse,poids);
+    }
+
+
+
     @Override
     public boolean manger(int quantite) throws NourritureNotFundExcepton {
-        if(super.nouriture!=null){
+        if(super.nourriture !=null){
             int poids=0;
-            for ( Nouriture n:nouriture){
-               poids+=(super.poids*quantite);
+            for ( Nourriture n: nourriture){
+               poids+=(super.poids*quantite*n.coeff);
             }
-            super.poids=poids/nouriture.size();
+            super.poids=poids/ nourriture.size();
             super.vitesse+= super.vitesse * 0.1;
             return true;
         }else{
