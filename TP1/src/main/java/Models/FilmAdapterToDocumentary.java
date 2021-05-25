@@ -1,9 +1,11 @@
 package Models;
 
+import java.util.List;
+
 public class FilmAdapterToDocumentary {
     private Film film ;
-    private String chaineDeCreation;
-    private String TypeDocumentaire;
+    private String chaineDeCreation; // NATGEAO, ART , TF1
+
     public FilmAdapterToDocumentary(Film film) {
         this.film = film;
     }
@@ -16,11 +18,18 @@ public class FilmAdapterToDocumentary {
         this.chaineDeCreation = chaineDeCreation;
     }
 
-    public String getTypeDocumentaire() {
-        return TypeDocumentaire;
+
+    public List<String> getHoraires() {
+        return film.getHoraires();
+    }
+    public String getName() {
+        return film.getName();
+    }
+    public void setName(String name) {
+        film.setName(name);
     }
 
-    public void setTypeDocumentaire(String typeDocumentaire) {
-        TypeDocumentaire = typeDocumentaire;
+    public void addHoraire(String horaire){
+        film.addHoraire(horaire);
     }
 }
