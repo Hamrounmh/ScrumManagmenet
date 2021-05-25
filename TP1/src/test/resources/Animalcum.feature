@@ -26,7 +26,7 @@ Feature: US_0003
 
     Examples:
       | poids | vitesse | nomNouriture |nomNouriture1|TauxDeGras|TauxDeGras1|quantite|nouveauPoids|nouvelleVitesse|
-      |99      |7       |viande        |herbe        |9         |2         |10      |10890          |9            |
+      |99     |7       |viande        |herbe        |9         |2         |10      |10890          |9            |
 
   Scenario Outline: On donne a l'animal une liste vide de nourriture. quandl'animal mange on doit avoir le message d'erreur Nourriture indisponible
     Given un animal

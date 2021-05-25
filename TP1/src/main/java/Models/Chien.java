@@ -5,7 +5,7 @@ import Exceptions.NourritureNotFundExcepton;
 import java.util.ArrayList;
 
 public class Chien extends Animal{
-    private ArrayList<Film> listeFilmChien = new ArrayList<>();
+
 
     public Chien(){
         super();
@@ -17,9 +17,7 @@ public class Chien extends Animal{
         super(vitesse,poids, nourriture);
     }
 
-    public void AddFilm(Film f){
-       listeFilmChien.add(f);
-    }
+
 
     @Override
     public boolean manger(int quantite) throws NourritureNotFundExcepton {
