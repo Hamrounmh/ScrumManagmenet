@@ -2,17 +2,14 @@ Feature: US_0004
 
   Scenario Outline: mon documentaire est de type animalier si il contient des animaux
     Given  un documentaire
-    And avec un film
-    And avec <
-    Given un
-    And avec <poids> et <vitesse>
-    And On donne la nouriture <nomNouriture> et <TauxDeGras>
-    When l'animal mange une <quantite> de nouriture
-    Then le poids de l'animal devient <nouveauPoids> et la vitesse devient <nouvelleVitesse>
+    And un film avec un <nom> et une <horaire>
+    And un FilmAdapterToDocumentary avec une <chaineDeCreation>
+    And un Animal avec <poids> et <vitesse>
+    When l'animal est ajouté
+    Then le Documentaire devient un Documentaire <Animalier>
 
     Examples:
-      | poids | vitesse | nomNouriture |TauxDeGras|quantite|nouveauPoids|nouvelleVitesse|
-      |99      |7       |viande        |9         |10      |8910         |9             |
-      |5      |56       |herbe         |2         |99      |990          |72            |
-      |3      |10       |poivre        |2         |78      |468          |13             |
-      |8      |18       |patate        |1         |18      |144          |23             |
+      | nom                                       |horaire  |chaineDeCreation  |poids|vitesse|Animalier|
+      |Nos Animaux et nous                        | 20h:50  |ARTE              |10   |  75   | true    |
+      |les mystres de la vie sur la planete Terre | 13h:30  |TF1               |80   |  50   | true    |
+

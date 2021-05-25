@@ -40,7 +40,7 @@ public class DocumentaireTest {
         documentaire1.addAnimal(animal2);
 
         film2 = new Film("les mystres de la vie sur la planete Terre");
-        film2.addHoraire("13h:50");
+        film2.addHoraire("13h:30");
 
         filmAdpDoc2 = new FilmAdapterToDocumentary(film2);
         filmAdpDoc2.setChaineDeCreation("TF1");
