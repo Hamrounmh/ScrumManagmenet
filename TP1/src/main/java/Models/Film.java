@@ -14,6 +14,10 @@ public class Film {
         this.animals = new ArrayList<>();
         this.horaires = new ArrayList<>();
     }
+    public Film(){
+        this.name="";
+        this.horaires=new ArrayList<>();
+    }
 
     public List<Animal> getAnimals(){
         return this.animals;
