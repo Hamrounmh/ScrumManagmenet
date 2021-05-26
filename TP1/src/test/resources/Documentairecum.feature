@@ -3,7 +3,7 @@ Feature: US_0004
   Scenario Outline: mon documentaire est de type animalier si il contient des animaux
     Given  un documentaire
     And un film avec un <nom> et une <horaire>
-    And une <chaineDeCreation>
+    And une chaine <chaineDeCreation>
     And un Animal avec <poids> et <vitesse>
     When l'animal est ajouté
     Then le Documentaire devient un Documentaire <Animalier>

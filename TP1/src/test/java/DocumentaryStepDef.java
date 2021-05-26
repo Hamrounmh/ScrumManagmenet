@@ -26,7 +26,7 @@ public class DocumentaryStepDef {
         film1.addHoraire(horaire);
     }
 
-    @And("^une (.*)$")
+    @And("^une chaine (.*)$")
     public void UneChaineDeCreation(String chaineDeCreation) {
         documentaire= new Documentaire(film1);
         documentaire.setChaineDeCreation(chaineDeCreation);
