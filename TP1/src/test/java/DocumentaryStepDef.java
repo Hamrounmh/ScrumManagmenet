@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en_scouse.An;
+import io.cucumber.java.eo.Do;
 
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ public class DocumentaryStepDef {
     Film film1;
     FilmAdapterToDocumentary filmAdpDoc1;
     Animal animal;
-    Documentaire documentaire = new Documentaire();
+    Documentaire documentaire= new Documentaire();
     @Given("^un documentaire$")
     public void unDocumentaire() {
         assertNotNull(documentaire);
@@ -25,10 +26,10 @@ public class DocumentaryStepDef {
         film1.addHoraire(horaire);
     }
 
-    @And("^un FilmAdapterToDocumentary avec une (.*)$")
-    public void filmadaptertodocumentaryAvecUneChaineDeCreation(String chaineDeCreation) {
-        filmAdpDoc1 = new FilmAdapterToDocumentary(film1);
-        filmAdpDoc1.setChaineDeCreation(chaineDeCreation);
+    @And("^une (.*)$")
+    public void UneChaineDeCreation(String chaineDeCreation) {
+        documentaire= new Documentaire(film1);
+        documentaire.setChaineDeCreation(chaineDeCreation);
 
     }
 

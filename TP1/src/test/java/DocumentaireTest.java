@@ -8,8 +8,7 @@ public class DocumentaireTest {
 
         private Documentaire documentaire1;
         private Documentaire documentaire2;
-        private FilmAdapterToDocumentary filmAdpDoc1;
-        private FilmAdapterToDocumentary filmAdpDoc2;
+
         private Film film1;
         private Film film2;
         private Animal animal1;
@@ -22,8 +21,6 @@ public class DocumentaireTest {
     public void setUp() {
         film1 = new Film("Nos Animaux et nous");
         film1.addHoraire("20h:50");
-        filmAdpDoc1 = new FilmAdapterToDocumentary(film1);
-        filmAdpDoc1.setChaineDeCreation("ARTE");
 
 
         animal1 = new Chien();
@@ -34,19 +31,19 @@ public class DocumentaireTest {
         animal2.setVitesse(40);
         animal2.setPoids(5);
 
-        documentaire1=new Documentaire();
-        documentaire1.setFilmAdapterToDocumentary(filmAdpDoc1);
+        documentaire1=new Documentaire(film1);
+        documentaire1.setChaineDeCreation("ARTE");
         documentaire1.addAnimal(animal1);
         documentaire1.addAnimal(animal2);
 
         film2 = new Film("les mystres de la vie sur la planete Terre");
         film2.addHoraire("13h:30");
 
-        filmAdpDoc2 = new FilmAdapterToDocumentary(film2);
-        filmAdpDoc2.setChaineDeCreation("TF1");
 
-        documentaire2 = new Documentaire();
-        documentaire2.setFilmAdapterToDocumentary(filmAdpDoc2);
+
+        documentaire2 = new Documentaire(film2);
+        documentaire1.setChaineDeCreation("TF1");
+
         // dans ce documentaire on n'ajoute pas d'animaux
         }
 

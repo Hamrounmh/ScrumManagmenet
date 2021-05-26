@@ -11,6 +11,10 @@ public class Film {
         this.name = name;
         this.horaires = new ArrayList<>();
     }
+    public Film(){
+        this.name="";
+        this.horaires=new ArrayList<>();
+    }
 
     public List<String> getHoraires() {
         return horaires;

@@ -2,31 +2,24 @@ package Models;
 
 import java.util.ArrayList;
 
-public class Documentaire {
-    private FilmAdapterToDocumentary filmAdapterToDocumentary ;
+public class Documentaire extends FilmAdapterToDocumentary {
+
     private ArrayList<Animal> animals;
 
-    public Documentaire(FilmAdapterToDocumentary filmAdapterToDocumentary, ArrayList<Animal> animals) {
-        this.filmAdapterToDocumentary = filmAdapterToDocumentary;
+    public Documentaire(Film film, ArrayList<Animal> animals) {
+        super(film);
         this.animals = animals;
     }
-    public Documentaire(FilmAdapterToDocumentary filmAdapterToDocumentary) {
-        this.filmAdapterToDocumentary = filmAdapterToDocumentary;
+    public Documentaire(Film film) {
+        super(film);
         this.animals = new ArrayList<>();
     }
 
     public Documentaire() {
-        this.filmAdapterToDocumentary = null;
+        super();
         this.animals = new ArrayList<>();
     }
 
-    public FilmAdapterToDocumentary getFilmAdapterToDocumentary() {
-        return filmAdapterToDocumentary;
-    }
-
-    public void setFilmAdapterToDocumentary(FilmAdapterToDocumentary filmAdapterToDocumentary) {
-        this.filmAdapterToDocumentary = filmAdapterToDocumentary;
-    }
     public void addAnimal(Animal a){
         animals.add(a);
     }

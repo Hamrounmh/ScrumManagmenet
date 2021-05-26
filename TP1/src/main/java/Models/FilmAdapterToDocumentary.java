@@ -10,6 +10,9 @@ public class FilmAdapterToDocumentary {
         this.film = film;
     }
 
+    public FilmAdapterToDocumentary() {
+
+    }
     public String getChaineDeCreation() {
         return chaineDeCreation;
     }
