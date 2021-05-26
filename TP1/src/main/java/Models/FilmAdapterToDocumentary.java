@@ -3,8 +3,8 @@ package Models;
 import java.util.List;
 
 public class FilmAdapterToDocumentary {
-    private Film film ;
-    private String chaineDeCreation; // NATGEAO, ART , TF1
+    protected Film film ;
+    protected String chaineDeCreation; // NATGEAO, ART , TF1
 
     public FilmAdapterToDocumentary(Film film) {
         this.film = film;
